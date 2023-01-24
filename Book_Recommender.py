@@ -8,12 +8,12 @@ font="sans serif"
 
 
 #Loading data_frame
-books = pickle.load(open('data.pkl' , 'rb'))
+books = pickle.load(open('datamvp.pkl' , 'rb'))
 books_list = books['title'].values
 st.image('https://i0.wp.com/thebashfulbookworm.com/wp-content/uploads/2021/05/Goodreads-2.png?w=1140&ssl=1')
 st.title('Meet your next favorite book.')
 selected_book_name=st.selectbox('Type in a book that you love',books_list)
-similarity = pickle.load(open('similarity.pkl' , 'rb'))
+similarity = pickle.load(open('similaritymvp.pkl' , 'rb'))
 def recommend(book):
     index = books[books['title'] == book].index[0]
     similar_books = sorted(enumerate(similarity[index]), key=lambda x: x[1], reverse=True)[1:6]
