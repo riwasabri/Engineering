@@ -3,4 +3,4 @@ numpy
 scikit-learn
 matplotlib
 streamlit
-pickleshare==4.0
+pickle==4.0
